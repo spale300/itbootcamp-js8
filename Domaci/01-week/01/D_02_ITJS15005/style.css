@@ -1,0 +1,30 @@
+body {
+  background-color: rgba(12, 18, 29, 0.4);
+}
+
+.heading {
+  text-align: center;
+}
+
+.img {
+  border: double red;
+}
+
+p {
+  color: rgb(231, 73, 15);
+}
+
+body p:nth-child(odd) {
+  color: blue;
+  font-size: 24px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.link {
+  color: red;
+}
+
+.link:hover {
+  color: green;
+}

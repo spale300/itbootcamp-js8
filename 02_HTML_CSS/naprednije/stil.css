@@ -1,0 +1,53 @@
+.desno {
+  text-align: right;
+}
+
+.crveni_paragraf {
+  color: red;
+}
+
+h3,
+h4 {
+  color: orange;
+}
+
+.drugi,
+#treci {
+  background-color: yellow;
+}
+
+li {
+  color: limegreen;
+}
+
+.kurs {
+  color: purple;
+}
+
+#ucim {
+  color: orange;
+}
+
+div p {
+  font-weight: bold;
+}
+
+div .prvi {
+  text-decoration: underline;
+}
+
+ol li:nth-child(3) {
+  color: orange;
+}
+
+ol li:nth-child(3n) {
+  font-style: italic;
+}
+
+ol li:nth-child(odd) {
+  background-color: yellow;
+}
+
+a:hover {
+  background-color: yellow;
+}

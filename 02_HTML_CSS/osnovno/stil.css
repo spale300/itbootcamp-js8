@@ -1,0 +1,55 @@
+html {
+  font-family: Arial;
+}
+
+body {
+  background-color: rgb(215, 215, 165);
+}
+
+h1 {
+  color: darkred;
+}
+
+h3 {
+  color: red;
+}
+
+p {
+  color: purple;
+  font-size: 20px;
+}
+
+img {
+  width: 400px;
+  height: 300px;
+  border: 2px dashed;
+}
+
+a {
+  color: orange;
+}
+
+.vezba {
+  text-align: center;
+}
+
+.text {
+  font-size: 24px;
+  text-align: right;
+}
+
+.tri {
+  color: green;
+  text-align: center;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+a:visited {
+  color: green;
+}
+
+a:hover {
+  background-color: yellow;
+}
+
+/*  Vezbanje 4 */
