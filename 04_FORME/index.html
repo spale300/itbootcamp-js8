@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forme</title>
+  </head>
+  <body>
+    <form action="test.php" method="post">
+      <fieldset>
+        <legend>Osnovni podaci:</legend>
+        <p>
+          <label for="ime">Ime i prezime:</label>
+          <input
+            type="text"
+            id="ime"
+            name="ime"
+            maxlength="8"
+            value=""
+            placeholder="unesi ime"
+          />
+        </p>
+
+        <p>
+          <label for="username">Korisnicko ime:</label>
+          <input
+            type="text"
+            id="username"
+            maxlength="12"
+            value=""
+            placeholder="unesi korisnicko ime"
+          />
+        </p>
+
+        <p>
+          <label for="password">Lozinka:</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="unesi lozinku"
+          />
+        </p>
+
+        <input type="hidden" id="skriven" name="skriven" value="100" />
+
+        <p>
+          <label for="godine">Godine:</label>
+          <input type="number" id="godine" />
+        </p>
+
+        <p>
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" />
+        </p>
+
+        <p>
+          <label for="pol">Odaberite pol:</label>
+          <input type="radio" id="z" name="pol" value="z" checked /> Zenski
+          <input type="radio" id="m" name="pol" value="m" /> Muski
+          <input type="radio" id="d" name="pol" value="d" /> Drugo
+        </p>
+
+        <p>
+          <label for="pj">Odaberite programski jezik:</label>
+          <input type="checkbox" name="pj" value="html" /> HTML
+          <input type="checkbox" name="pj" value="css" /> Css
+          <input type="checkbox" name="pj" value="js" /> JavaScript
+        </p>
+
+        <p>
+          <label for="grad">Grad:</label>
+          <select name="grad" id="grad">
+            <optgroup label="Centralna Srbija">
+              <option value="kg">Kragujevac</option>
+              <option value="bg">Beograd</option>
+            </optgroup>
+
+            <optgroup label="Juzna srbija">
+              <option value="vr">Vranje</option>
+              <option value="nis">Nis</option>
+            </optgroup>
+          </select>
+        </p>
+
+        <p>
+          <label for="iskustva">Koja su vasa iskustva za ovaj sajt?</label>
+          <textarea name="iskustva" id="iskustva" cols="30" rows="10">
+dsadassad</textarea
+          >
+        </p>
+
+        <input type="submit" value="Posalji" />
+      </fieldset>
+    </form>
+  </body>
+</html>
