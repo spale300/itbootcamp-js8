@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-image: url("slika1.jpg");
+  background-size: cover;
+  height: 300px;
+  width: 100%;
+  position: fixed;
+}
+
+p {
+  font-size: 32px;
+  font-weight: 700;
+  color: red;
+
+  position: absolute;
+
+  /* 
+  left: 0;
+  top: 0; */
+
+  /* right: 0;
+  top: 0; */
+
+  /* bottom: 0;
+  right: 0; */
+
+  /* bottom: 0;
+  left: 0; */
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
