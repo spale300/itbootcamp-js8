@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  text-align: center;
+  background-color: orange;
+  padding: 5px;
+}
+
+nav {
+  background-color: orange;
+}
+
+ul li a:hover {
+  background-color: rgb(162, 107, 4);
+  border: 1px solid black;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+}
+
+aside {
+  padding: 10px;
+}
+
+img {
+  width: 100px;
+  height: 300px;
+  padding: 30px;
+}
+
+label,
+input {
+  margin: 20px 0;
+}
+
+.btn {
+  height: 30px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
+.row {
+  width: 100%;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+  [class*="col-m-"] {
+    float: left;
+  }
+
+  .col-m-1 {
+    width: 8.33%;
+  }
+
+  .col-m-2 {
+    width: 16.66%;
+  }
+
+  .col-m-3 {
+    width: 25%;
+  }
+
+  .col-m-4 {
+    width: 33.33%;
+  }
+
+  .col-m-5 {
+    width: 41.66%;
+  }
+
+  .col-m-6 {
+    width: 50%;
+  }
+
+  .col-m-7 {
+    width: 58.33%;
+  }
+
+  .col-m-8 {
+    width: 66.66%;
+  }
+
+  .col-m-9 {
+    width: 75%;
+  }
+
+  .col-m-10 {
+    width: 83.33%;
+  }
+
+  .col-m-11 {
+    width: 91.66%;
+  }
+
+  .col-m-12 {
+    width: 100%;
+  }
+
+  label {
+    margin: 0 10px;
+  }
+
+  input {
+    height: 30px;
+    margin: 0 10px;
+  }
+
+  p {
+    color: orange;
+  }
+
+  h1 {
+    color: rgb(104, 73, 13);
+  }
+
+  textarea {
+    height: 60px;
+    margin: 0 10px;
+  }
+
+  .btn {
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+}
+
+@media only screen and (min-width: 650px) and (max-width: 750px) {
+  p {
+    color: green;
+  }
+  h1:hover {
+    color: green;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  [class*="col-"] {
+    float: left;
+  }
+
+  .col-1 {
+    width: 8.33%;
+  }
+
+  .col-2 {
+    width: 16.66%;
+  }
+
+  .col-3 {
+    width: 25%;
+  }
+
+  .col-4 {
+    width: 33.33%;
+  }
+
+  .col-5 {
+    width: 41.66%;
+  }
+
+  .col-6 {
+    width: 50%;
+  }
+
+  .col-7 {
+    width: 58.33%;
+  }
+
+  .col-8 {
+    width: 66.66%;
+  }
+
+  .col-9 {
+    width: 75%;
+  }
+
+  .col-10 {
+    width: 83.33%;
+  }
+
+  .col-11 {
+    width: 91.66%;
+  }
+
+  .col-12 {
+    width: 100%;
+  }
+}
