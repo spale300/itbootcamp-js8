@@ -167,5 +167,3 @@ if (brojDelioca == 2) {
 } else {
   console.log(`Broj ${k} je slozen.`);
 }
-
-//12 uraditi za cas
