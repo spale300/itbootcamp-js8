@@ -80,7 +80,7 @@ console.log(srednjaVrednost(brojevi3));
 
 //05.Odrediti maksimalnu vrednost u celobrojnom nizu.
 
-let brojevi4 = [13, -2, -6, 12, 8, -19, -1, -25];
+let brojevi4 = [13, -2, -6, 12, 8, -19, -1, 25];
 
 let max = (niz) => {
   let max = niz[0];
@@ -109,3 +109,137 @@ let min = (niz) => {
 };
 
 console.log(min(brojevi4));
+
+//07.Odrediti indeks maksimalnog elementa celobrojnog niza.
+
+let indMaxNiza = (niz) => {
+  let maks = max(niz);
+  let indeks = -1; // pozicija -1 je neutralana zato sto index ide od 0 do ...
+
+  for (let i = 0; i < niz.length; i++) {
+    if (maks == niz[i]) {
+      indeks = i;
+    }
+  }
+  return indeks;
+};
+
+console.log(indMaxNiza(brojevi4));
+
+//v3
+let indMaxNiza2 = (niz) => {
+  let maks = max(niz);
+  let indeks = -1; // pozicija -1 je neutralana zato sto index ide od 0 do ...
+
+  for (let i = 0; i < niz.length; i++) {
+    if (maks == niz[i]) {
+      indeks = i;
+      // break //break ili return index
+      return indeks;
+    }
+  }
+};
+
+console.log(indMaxNiza(brojevi4));
+
+//09.Odrediti broj elemenata celobrojnog niza koji su veći od srednje vrednosti.
+
+let veciOdSredine = (niz) => {
+  let srednja = srednjaVrednost(niz);
+  let brojElemenata = 0;
+
+  for (let i = 0; i < niz.length; i++) {
+    if (niz[i] > srednja) {
+      brojElemenata++;
+    }
+  }
+  return brojElemenata;
+};
+
+console.log(veciOdSredine(brojevi4));
+console.log(veciOdSredine(brojevi3));
+
+//10.Izračunati zbir pozitivnih elemenata celobrojnog niza.
+
+let zbirPozitivnih = (niz) => {
+  let suma = 0;
+  for (let i = 0; i < niz.length; i++) {
+    if (niz[i] > 0) {
+      suma += niz[i];
+    }
+  }
+  return suma;
+};
+
+console.log(zbirPozitivnih(brojevi4));
+
+//11. Odrediti broj parnih elemenata u celobrojnom nizu.
+
+let parniBrojevi = (niz) => {
+  let parni = 0;
+  for (let i = 0; i < niz.length; i++) {
+    if (niz[i] % 2 == 0) {
+      parni++;
+    }
+  }
+  return parni;
+};
+
+console.log(parniBrojevi(brojevi4));
+
+//12. Odrediti broj parnih elemenata sa neparnim indeksom.
+
+let neparniIndex = (niz) => {
+  let broj = 0;
+
+  for (let i = 0; i < niz.length; i++) {
+    if (niz[i] % 2 == 0 && i % 2 != 0) {
+      broj++;
+    }
+  }
+  return broj;
+};
+
+console.log(neparniIndex(brojevi4));
+
+//13.Izračunati sumu elemenata niza sa parnim indeksom.
+
+let sumaParanIndex = (niz) => {
+  let suma = 0;
+
+  for (let i = 1; i < niz.length; i += 2) {
+    suma += niz[i];
+  }
+  return suma;
+};
+
+let brojevi5 = [13, -3, -6, 12, 8, -19, -1, -25];
+
+console.log(sumaParanIndex(brojevi5));
+
+//14.Promeniti znak svakom elementu celobrojnog niza.
+
+let promena = (niz) => {
+  let change = [];
+
+  for (i = 0; i < niz.length; i++) {
+    // change = `${change} ${niz[i] * -1}`;
+    change.push(niz[i] * -1);
+  }
+  return change;
+};
+
+console.log(promena(brojevi5));
+
+//15.Promeniti znak svakom neparnom elementu celobrojnog niza sa parnim indeksom.
+
+let neparnaPromena = (niz) => {
+  for (i = 0; i < niz.length; i++) {
+    if (i % 2 == 0 && niz[i] % 2 != 0) {
+      niz[i] = niz[i] * -1;
+    }
+  }
+  return niz;
+};
+
+console.log(neparnaPromena(brojevi5));

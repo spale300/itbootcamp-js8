@@ -76,3 +76,17 @@ text("green");
 text("red");
 text("yellow");
 text("blue");
+
+let sredina = (a, b) => {
+  let suma = 0;
+  let brojBrojeva = 0;
+  for (let i = a; i <= b; i++) {
+    if (i % 10 == 3) {
+      suma += i;
+      brojBrojeva++;
+    }
+  }
+  return suma / brojBrojeva;
+};
+
+console.log(sredina(13, 66));
