@@ -46,7 +46,7 @@ let dan = {
   kisa: true,
   sunce: false,
   oblacno: true,
-  temperatura: [5, -1, 6, 2, 4],
+  temperatura: [5, -1, 6, 2, 6],
   prosecnaT: function () {
     let suma = 0;
     this.temperatura.forEach((el) => {
@@ -69,16 +69,38 @@ let dan = {
     let broj = 0;
 
     this.temperatura.forEach((el) => {
-      if (max > el) {
+      if (max == el) {
+        broj++;
+      }
+      if (max < el) {
         max = el;
       }
     });
-    return max;
+    return broj;
+  },
+
+  //05. Vraća true ukoliko je u većini dana temperatura bila iznad proseka. U suprotnom vraća false.
+  toplo: function () {
+    if (this.natprosecnaT() > this.temperatura.length / 2) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+
+  //06. Za dan se smatra da je leden ukoliko nijedna temperatura izmerena tog dana nije iznosila iznad 0 stepeni. Metod vraća true ukoliko je dan bio leden, u suprotnom metod vraća false.
+
+  leden: function () {
+    for (let i = 0; i < this.temperatura.length; i++) {
+      if (this.temperatura[i] > 0) {
+        return false;
+      }
+    }
+    return true;
   },
 };
 
 console.log(dan.prosecnaT());
 console.log(dan.natprosecnaT());
 console.log(dan.maxT());
-
-// 3,4,5,6
+console.log(dan.toplo());
