@@ -1,0 +1,19 @@
+td {
+  border: 2px solid black;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.error {
+  /* color: red; */
+  background-color: red;
+  border: 1px solid red;
+}
+
+.success {
+  /* color: green; */
+  border: solid 1px green;
+  background-color: green;
+}

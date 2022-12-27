@@ -254,3 +254,194 @@ let natBlog = (users) => {
 };
 
 natBlog(users);
+
+let dan1 = {
+  datum: `2022/12/22`,
+  kisa: true,
+  sunce: false,
+  oblacno: true,
+  temperatura: [5, -1, 6, 2],
+};
+let dan2 = {
+  datum: `2022/1/11`,
+  kisa: true,
+  sunce: false,
+  oblacno: true,
+  temperatura: [5, 6, 2, 6],
+};
+let dan3 = {
+  datum: `2022/12/2`,
+  kisa: true,
+  sunce: false,
+  oblacno: true,
+  temperatura: [5, -1, 6, 2, 6, 7],
+};
+let dan4 = {
+  datum: `2022/11/22`,
+  kisa: true,
+  sunce: false,
+  oblacno: true,
+  temperatura: [6, 2, 6],
+};
+let dan5 = {
+  datum: `2022/12/21`,
+  kisa: false,
+  sunce: true,
+  oblacno: true,
+  temperatura: [2, 6],
+};
+
+let dan = [dan1, dan2, dan3, dan4, dan5];
+
+let merenje = (niz) => {
+  let max = 0;
+  niz.forEach((temp) => {
+    if (temp.temperatura.length > max) {
+      max = temp.temperatura.length;
+    }
+  });
+
+  niz.forEach((dan) => {
+    if (dan.temperatura.length == max) {
+      console.log(dan.datum);
+      return;
+    }
+  });
+};
+
+merenje(dan);
+
+let kisni = (niz) => {
+  brojac = 0;
+  niz.forEach((el) => {
+    if (el.kisa == true) {
+      brojac++;
+    }
+  });
+  return brojac;
+};
+
+console.log(kisni(dan));
+
+let prebrojDane = (niz) => {
+  let kisa = 0;
+  let sunce = 0;
+  let oblacno = 0;
+
+  niz.forEach((dan) => {
+    if (dan.kisa) {
+      kisa++;
+    }
+    if (dan.sunce) {
+      sunce++;
+    }
+    if (dan.oblacno) {
+      oblacno++;
+    }
+  });
+  console.log(`Kisa: ${kisa}`);
+  console.log(`Sunce: ${sunce}`);
+  console.log(`Oblacno: ${oblacno}`);
+};
+
+prebrojDane(dan);
+
+let procnatemperatura = (niz) => {
+  let suma = 0;
+  niz.forEach((dan) => {
+    dan.forEach((el) => {
+      suma = el.temperatura;
+    });
+  });
+  return suma / niz.length;
+};
+
+let prosek = (niz) => {
+  suma = 0;
+  niz.forEach((dan) => {
+    suma += dan;
+  });
+  return suma / niz.length;
+};
+
+let brojNatDana = (niz) => {};
+
+let lajk = (niz) => {
+  let suma = 0;
+  niz.forEach((el) => {
+    suma += el.likes;
+  });
+  return suma;
+};
+
+console.log(lajk(blogs));
+
+let prosecanLajkova = (niz) => {
+  let maks = lajk(niz);
+
+  return maks / niz.length;
+};
+
+console.log(prosecanLajkova(blogs));
+
+let pozitivno = (niz) => {
+  niz.forEach((el) => {
+    if (el.likes > el.dislikes) {
+      console.log(el.title);
+    }
+  });
+};
+
+pozitivno(blogs);
+
+let duploVise = (niz) => {
+  niz.forEach((el) => {
+    if (el.likes >= el.dislikes * 2) {
+      console.log(el.title);
+    }
+  });
+};
+
+duploVise(blogs);
+
+let zavrs = (niz) => {
+  niz.forEach((blog) => {
+    if (blog.title.endsWith("!")) console.log(blog.title);
+  });
+};
+
+zavrs(blogs);
+
+////////
+
+let punoletni = (niz) => {
+  niz.forEach((user) => {
+    if (user.age > 18) {
+      console.log(user.username);
+    }
+  });
+};
+
+punoletni(users);
+
+let punoLike = (niz) => {
+  niz.forEach((user) => {
+    blogs = user.blogs;
+    blogs.forEach((blog) => {
+      if (blog.likes > 50) {
+        console.log(blog.title);
+      }
+    });
+  });
+};
+
+punoLike(users);
+
+let john = (niz) => {
+  niz.forEach((user) => {
+    if (user.username == "JohnDoe") {
+      console.log(user.blogs);
+    }
+  });
+};
+john(users);
