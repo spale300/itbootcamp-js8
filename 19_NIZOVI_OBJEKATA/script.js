@@ -188,3 +188,69 @@ let printBlogs = (user) => {
 };
 
 printBlogs("Jelena");
+
+// Ispisati imena onih autora koji imaju ukupno više od 100 lajkova za blogove koje su napisali
+
+let prekoSto = (user) => {
+  user.forEach((el) => {
+    let suma = 0;
+    el.blogs.forEach((blog) => {
+      suma += blog.likes;
+    });
+    if (suma > 100) {
+      console.log(el.username);
+    }
+  });
+};
+
+prekoSto(users);
+
+// Ispisati naslove onih blogova koji imaju natprosečan broj pozitivnih ocena
+
+let prosecanBroj = (users) => {
+  let sum = 0;
+  let broj = 0;
+
+  for (let i = 0; i < users.length; i++) {
+    let user = users[i];
+    let blogs = user.blogs;
+    for (let j = 0; j < blogs.length; j++) {
+      let blog = blogs[j];
+      sum += blog.likes;
+      broj++;
+    }
+  }
+  return sum / broj;
+};
+
+// let prosecanBroj1 = (users) => {
+//   let sum = 0;
+//   let broj = 0;
+
+//   users.forEach((blogs) => {
+//     blogs.forEach((blog) => {
+//       sum += blog.likes;
+//       broj++;
+//     });
+//   });
+//   return sum / broj;
+// };
+
+console.log(prosecanBroj(users));
+
+let natBlog = (users) => {
+  let avg = prosecanBroj(users);
+
+  for (let i = 0; i < users.length; i++) {
+    let user = users[i];
+    let blogs = user.blogs;
+    for (let j = 0; j < blogs.length; j++) {
+      let blog = blogs[j];
+      if (blog.likes > avg) {
+        console.log(blog.title);
+      }
+    }
+  }
+};
+
+natBlog(users);
