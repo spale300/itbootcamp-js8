@@ -223,20 +223,21 @@ let prosecanBroj = (users) => {
   return sum / broj;
 };
 
-// let prosecanBroj1 = (users) => {
-//   let sum = 0;
-//   let broj = 0;
+let prosecanBroj1 = (users) => {
+  let sum = 0;
+  let broj = 0;
 
-//   users.forEach((blogs) => {
-//     blogs.forEach((blog) => {
-//       sum += blog.likes;
-//       broj++;
-//     });
-//   });
-//   return sum / broj;
-// };
+  users.forEach((blogs) => {
+    // let blog = blogs.blogs;
+    blogs.blogs.forEach((blog) => {
+      sum += blog.likes;
+      broj++;
+    });
+  });
+  return sum / broj;
+};
 
-console.log(prosecanBroj(users));
+console.log(prosecanBroj1(users));
 
 let natBlog = (users) => {
   let avg = prosecanBroj(users);
@@ -311,17 +312,30 @@ let merenje = (niz) => {
 
 merenje(dan);
 
-let kisni = (niz) => {
-  brojac = 0;
-  niz.forEach((el) => {
-    if (el.kisa == true) {
-      brojac++;
+let prosekTemp = (dani) => {
+  let broj = 0;
+  let avgT = 0;
+  dani.forEach((dan) => {
+    let suma = 0;
+    dan.temperatura.forEach((el) => {
+      suma += el;
+    });
+    let sumaT = suma / dan.temperatura.length;
+
+    avgT += suma;
+    avgT = avgT / dan.length;
+    console.log(avgT);
+    if (suma > avgT) {
+      broj++;
     }
   });
-  return brojac;
+
+  return broj;
+  // sumaT += sumaT;
+  // console.log(sumaT / dan.length);
 };
 
-console.log(kisni(dan));
+console.log(prosekTemp(dan));
 
 let prebrojDane = (niz) => {
   let kisa = 0;
