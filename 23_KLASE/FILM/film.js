@@ -3,11 +3,25 @@ class Film {
   #naslov;
   #reziser;
   #godinaIzdanja;
+  #ocene;
 
-  constructor(naslov, reziser, godinaIzdanja) {
+  constructor(naslov, reziser, godinaIzdanja, ocene) {
     this.naslov = naslov;
     this.reziser = reziser;
     this.godinaIzdanja = godinaIzdanja;
+    this.ocene = ocene;
+  }
+
+  get ocene() {
+    return this.#ocene;
+  }
+
+  set ocene(o) {
+    if (Array.isArray(o)) {
+      this.#ocene = o;
+    } else {
+      this.#ocene = [];
+    }
   }
 
   set naslov(n) {
@@ -48,6 +62,14 @@ class Film {
 
   stampaj() {
     console.log(this.naslov);
+  }
+
+  prosek() {
+    let suma = 0;
+    this.ocene.forEach((el) => {
+      suma += el;
+    });
+    return suma / this.ocene.length;
   }
 }
 

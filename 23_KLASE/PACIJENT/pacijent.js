@@ -1,63 +1,67 @@
-class Pacijent {
-  constructor(ime, visina, tezina) {
-    this.ime = ime;
-    this.visina = visina;
-    this.tezina = tezina;
+export class Pacijent {
+  constructor(i, v, t) {
+    this.ime = i;
+    this.visina = v;
+    this.tezina = t;
   }
 
+  //ime
   set ime(i) {
-    if (i.length > 0) {
-      this._ime = i;
-    } else {
-      this._ime = "GRESKA! Dodaj ime";
-    }
+    this._ime = i;
   }
 
   get ime() {
     return this._ime;
   }
-
+  //visina
   set visina(v) {
-    if (v > 0 && v < 250) {
+    if (v < 2.5 && v > 0) {
       this._visina = v;
     } else {
-      this._visina = 150;
+      this._visina = 1.7;
     }
   }
 
   get visina() {
     return this._visina;
   }
-
+  //težina
   set tezina(t) {
     if (t > 0 && t < 550) {
       this._tezina = t;
     } else {
-      this._tezina = 60;
+      this._tezina = 58;
     }
   }
 
   get tezina() {
     return this._tezina;
   }
-
+  //metode ostale
   stampaj() {
-    console.log(`${this.ime} je visok ${this.visina} i tezak ${this.tezina}.`);
+    console.log(this);
+  }
+
+  stampajListu() {
+    let htmlLista = `<ul>
+    <li>Ime:${this.ime}</li>
+    <li>Visina:${this.visina}</li>
+    <li>Tezina:${this.tezina}</li>
+    </ul>
+    `;
+    return htmlLista;
   }
 
   bmi() {
-    let visinaM = this.visina / 100;
-    let bmi = this.tezina / Math.sqrt(visinaM);
+    let bmi = this.tezina / (this.visina * this.visina);
     return bmi;
   }
 
   kritican() {
-    if (this.bmi() < 15 && this.bmi() > 40) {
-      return true;
-    } else {
-      return false;
+    let x = false;
+    if (this.bmi() < 15 || this.bmi() > 40) {
+      x = true;
     }
+    return x;
   }
 }
-
-export { Pacijent };
