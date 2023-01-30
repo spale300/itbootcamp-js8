@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>snapshot</title>
+  </head>
+  <body>
+    <h1>Current tasks</h1>
+    <ul></ul>
+
+    <h1>Add new task</h1>
+    <form action="">
+      <label for="title">Title: </label>
+      <input type="text" name="title" id="title" tab="0" />
+      <br />
+      <label for="start_date">Start date: </label>
+      <input type="datetime-local" name="start_date" id="start_date" tab="1" />
+      <br />
+      <label for="due_date">Due date: </label>
+      <input type="datetime-local" name="due_date" id="due_date" tab="2" />
+      <br />
+      <label for="priority">Priority: </label>
+      <input type="checkbox" name="priority" id="priority" tab="3" />
+      <br />
+      <label for="description">Description: </label>
+      <textarea
+        name="description"
+        id="description"
+        cols="30"
+        rows="10"
+        tab="4"
+      ></textarea>
+      <br />
+      <!-- <input type="submit" value="Submit!" tab="5" id="add" /> -->
+      <button id="add" tab="5">Submit!</button>
+    </form>
+
+    <div id="error"></div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyAQDWlBoz4Did9qHPLhaSo1bCgwI_RDj1k",
+        authDomain: "itbootcamp-js-a0261.firebaseapp.com",
+        projectId: "itbootcamp-js-a0261",
+        storageBucket: "itbootcamp-js-a0261.appspot.com",
+        messagingSenderId: "45695812997",
+        appId: "1:45695812997:web:4ac79f0418331a3d37f0ec",
+        measurementId: "G-T3J810P29R",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      let db = firebase.firestore();
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
