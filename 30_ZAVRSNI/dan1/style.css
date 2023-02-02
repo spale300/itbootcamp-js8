@@ -15,6 +15,17 @@ header {
   margin-bottom: 50px;
 }
 
+section {
+  width: 70%;
+  margin: auto;
+  height: 500px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+section::-webkit-scrollbar {
+  display: none;
+}
 .row {
   overflow: hidden;
   margin-bottom: 20px;
@@ -163,10 +174,16 @@ input:focus,
   outline-width: 0;
 }
 
+.username {
+  font-weight: bold;
+  color: purple;
+}
+
 .list {
-  background-color: rgba(114, 76, 148, 0.633);
+  list-style: none;
+  background-color: white;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  color: white;
+  color: #333;
   width: 50%;
   margin: 5px;
   padding: 20px;
