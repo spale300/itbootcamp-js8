@@ -25,13 +25,32 @@
       <ul></ul>
     </section>
 
-    <form id="formMessage" class="row">
+    <form class="row">
       <input
-        type="text"
-        placeholder=" Your message..."
-        id="inputMessage"
+        type="color"
+        name="fcolor"
+        id="fcolor"
+        value="#fff"
         class="col-9 col-m-12"
       />
+      <input
+        type="submit"
+        value="Update color"
+        class="btn col-3 col-m-12"
+        id="colorC"
+      />
+    </form>
+
+    <form class="row">
+      <textarea
+        name=""
+        id="inputMessage"
+        placeholder=" Your message..."
+        cols="10"
+        rows="5"
+        class="col-9 col-m-12"
+      ></textarea>
+
       <input
         type="submit"
         value="Send"
@@ -55,7 +74,7 @@
       />
     </form>
 
-    <span id="update"></span>
+    <span class="update"></span>
 
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>

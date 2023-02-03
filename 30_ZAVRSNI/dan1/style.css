@@ -152,6 +152,7 @@ section::-webkit-scrollbar {
   background-color: rebeccapurple;
   cursor: pointer;
   border: 2px solid rebeccapurple;
+  transition: all 0.4s ease-out;
 }
 
 form {
@@ -187,8 +188,50 @@ input:focus,
   width: 50%;
   margin: 5px;
   padding: 20px;
+}
+
+.list-l {
   text-align: left;
+  float: left;
   border-top-right-radius: 999px;
   border-bottom-right-radius: 999px;
   border-bottom-left-radius: 999px;
+}
+
+.list-r {
+  text-align: right;
+  float: right;
+  background-color: rgb(214, 207, 221);
+  border-top-left-radius: 999px;
+  border-bottom-right-radius: 999px;
+  border-bottom-left-radius: 999px;
+}
+
+.active {
+  background-color: rebeccapurple;
+  font-weight: bold;
+  opacity: 100%;
+}
+
+.update {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+  border-radius: 10%;
+}
+
+textarea {
+  width: 400px;
+  height: 40px;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+textarea:focus,
+.btn:focus {
+  outline-width: 0;
+}
+textarea:focus {
+  border: 3px purple solid;
 }

@@ -10,15 +10,28 @@ export class ChatUI {
   set ul(ul) {
     this._ul = ul;
   }
+  //2//////////////////////
+  templateLI(data, send, id) {
+    let html = "";
 
-  templateLI(data) {
-    let html = `<li class="list"> <span class="username">${
-      data.username
-    } :</span>
+    if (send == data.username) {
+      html = `<li class="list list-r" id="${id}"> <span class="username">${
+        data.username
+      } :</span>
     <span class="message">${data.message}</span><br>
-    <span>${this.time(data)}</span>
+    <span>${this.time(data)}</span><button class="delete">❌</button>
     </li>
     `;
+    } else {
+      html = `<li class="list list-l" id="${id}"> <span class="username">${
+        data.username
+      } :</span>
+    <span class="message">${data.message}</span><br>
+    <span>${this.time(data)}</span><button class="delete">❌</button>
+    </li>
+    `;
+    }
+
     this.ul.innerHTML += html;
   }
 

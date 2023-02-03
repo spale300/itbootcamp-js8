@@ -55,6 +55,30 @@ export class Chatroom {
     let response = await this.chat.add(obj);
     return response;
   }
+  //2 zadatak/////////////////////////////////
+  delChat(msg) {
+    this.chat
+      .doc(msg)
+      .delete()
+      .onSnapshot((snapshot) => {
+        let changes = snapshot.docChanges();
+        changes.forEach((change) => {
+          let type = change.type;
+          let doc = change.doc;
+
+          if (type == "removed") {
+            let id = doc.id;
+            console.log(id);
+          }
+        });
+      })
+      .then(() => {
+        console.log(`Chat deleted!`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   getChats(callback) {
     this.unsub = this.chat
@@ -69,6 +93,11 @@ export class Chatroom {
 
           if (type == "added") {
             callback(doc.data());
+          }
+
+          if (type == "removed") {
+            let id = doc.id;
+            console.log(id);
           }
         });
       });
